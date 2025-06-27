@@ -1,28 +1,26 @@
-# 🌱 EcoShare
+# PDF to PPT Converter
 
-**EcoShare** is a sustainable digital platform designed for sharing and collaboration without environmental waste. Whether it’s documents, presentations, or eco-friendly resources, EcoShare helps users upload and download files with a clean, simple UI — promoting digital well-being and green practices.
+A lightweight and easy-to-use web application that converts PDF files into PowerPoint presentations (PPTX). Built with HTML, CSS, and JavaScript, this tool allows users to upload a PDF and get a downloadable PPTX file in seconds.
 
-## 🔗 Live Demo
+## 🚀 Live Demo
 
-👉 [Click here to try the Live Demo](https://Nethra1619.github.io/pdf/)  
-> Replace this URL with your actual GitHub Pages or deployment link.
+👉 [Click here to try the live demo](https://Nethra1619.github.io/pdf/)
 
----
+> Replace the above link with your actual GitHub Pages URL.
 
-## 💡 Key Features
+## 📌 Features
 
-- ♻️ Environmentally inspired UI and theme
-- 📤 Upload and share files instantly
-- 📥 Download shared resources with ease
-- 📁 Secure and organized file management
-- 🧑‍🤝‍🧑 Community-focused sharing system
+- 📄 Upload PDF documents
+- 🔄 Converts PDF to PPTX format
+- ⬇️ Download the resulting PowerPoint file
+- 💻 Works in modern browsers
+- ⚡ No server-side processing (Fully client-side)
 
----
+## 🛠️ Installation
 
-## 🚀 Getting Started
-
-### 1. Clone the Repository
+To run the project locally:
 
 ```bash
 git clone https://github.com/Nethra1619/pdf.git
 cd pdf
+open index.html
