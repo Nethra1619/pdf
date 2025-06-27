@@ -133,44 +133,9 @@
   </div>
 
   <!-- PDF.js if needed -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-
-  <!-- Inline Script to Make Browse Button Work -->
-  <script>
-    const browseBtn = document.getElementById('browseBtn');
-    const fileInput = document.getElementById('fileInput');
-    const fileInfo = document.getElementById('fileInfo');
-    const fileName = document.getElementById('fileName');
-    const fileSize = document.getElementById('fileSize');
-    const removeFile = document.getElementById('removeFile');
-    const conversionOptions = document.getElementById('conversionOptions');
-    const convertSection = document.getElementById('convertSection');
-
-    // Trigger file selection
-    browseBtn.addEventListener('click', () => {
-      fileInput.click();
-    });
-
-    // Handle file selection
-    fileInput.addEventListener('change', () => {
-      const file = fileInput.files[0];
-      if (file) {
-        fileInfo.style.display = 'block';
-        conversionOptions.style.display = 'block';
-        convertSection.style.display = 'block';
-
-        fileName.textContent = file.name;
-        fileSize.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
-      }
-    });
-
-    // Remove selected file
-    removeFile.addEventListener('click', () => {
-      fileInput.value = '';
-      fileInfo.style.display = 'none';
-      conversionOptions.style.display = 'none';
-      convertSection.style.display = 'none';
-    });
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script
+  
+<!-- Your main script -->
+<script src="script.js"></script>
 </body>
 </html>
