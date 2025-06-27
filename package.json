@@ -1,0 +1,17 @@
+{
+  "name": "pdf-to-ppt-converter",
+  "version": "1.0.0",
+  "description": "A simple PDF to PowerPoint converter built with HTML, CSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
