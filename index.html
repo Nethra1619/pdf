@@ -1,141 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PDF to PPT Converter</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF to PPT Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <header class="header">
-      <div class="logo">
-        <i class="fas fa-file-powerpoint"></i>
-        <h1>PDF to PPT Converter</h1>
-      </div>
-      <p class="subtitle">Convert your PDF documents into PowerPoint presentations instantly</p>
-    </header>
-
-    <main class="main-content">
-      <div class="converter-card">
-        <div class="upload-section" id="uploadSection">
-          <div class="upload-area" id="uploadArea">
-            <div class="upload-icon">
-              <i class="fas fa-cloud-upload-alt"></i>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-file-powerpoint"></i>
+                <h1>PDF to PPT Converter</h1>
             </div>
-            <h3>Upload Your PDF File</h3>
-            <p>Drag and drop your PDF file here or click to browse</p>
-            <input type="file" id="fileInput" accept=".pdf" hidden>
-            <button class="browse-btn" id="browseBtn">
-              <i class="fas fa-folder-open"></i>
-              Browse Files
-            </button>
-          </div>
-        </div>
+            <p class="subtitle">Convert your PDF documents into PowerPoint presentations instantly</p>
+        </header>
 
-        <div class="file-info" id="fileInfo" style="display: none;">
-          <div class="file-details">
-            <div class="file-icon">
-              <i class="fas fa-file-pdf"></i>
+        <main class="main-content">
+            <div class="converter-card">
+                <div class="upload-section" id="uploadSection">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                        <h3>Upload Your PDF File</h3>
+                        <p>Drag and drop your PDF file here or click to browse</p>
+                        <input type="file" id="fileInput" accept=".pdf" hidden>
+                        <button class="browse-btn" id="browseBtn">
+                            <i class="fas fa-folder-open"></i>
+                            Browse Files
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-info" id="fileInfo" style="display: none;">
+                    <div class="file-details">
+                        <div class="file-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="file-meta">
+                            <h4 id="fileName">document.pdf</h4>
+                            <p id="fileSize">2.5 MB</p>
+                        </div>
+                        <button class="remove-file" id="removeFile">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="conversion-options" id="conversionOptions" style="display: none;">
+                    <h3>Conversion Settings</h3>
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <label for="slideLayout">Slide Layout</label>
+                            <select id="slideLayout">
+                                <option value="standard">Standard (4:3)</option>
+                                <option value="widescreen" selected>Widescreen (16:9)</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="imageQuality">Image Quality</label>
+                            <select id="imageQuality">
+                                <option value="high" selected>High Quality</option>
+                                <option value="medium">Medium Quality</option>
+                                <option value="low">Low Quality</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="convert-section" id="convertSection" style="display: none;">
+                    <button class="convert-btn" id="convertBtn">
+                        <i class="fas fa-magic"></i>
+                        Convert to PPT
+                    </button>
+                </div>
+
+                <div class="progress-section" id="progressSection" style="display: none;">
+                    <div class="progress-info">
+                        <h3>Converting your PDF...</h3>
+                        <p id="progressText">Initializing conversion...</p>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress-percentage" id="progressPercentage">0%</div>
+                </div>
+
+                <div class="success-section" id="successSection" style="display: none;">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Conversion Complete!</h3>
+                    <p>Your PowerPoint presentation is ready for download</p>
+                    <div class="download-actions">
+                        <button class="download-btn" id="downloadBtn">
+                            <i class="fas fa-download"></i>
+                            Download PPT
+                        </button>
+                        <button class="convert-another-btn" id="convertAnotherBtn">
+                            <i class="fas fa-plus"></i>
+                            Convert Another File
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="file-meta">
-              <h4 id="fileName">document.pdf</h4>
-              <p id="fileSize">2.5 MB</p>
+        </main>
+
+        <footer class="footer">
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>100% Secure</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Fast Conversion</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Works on All Devices</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-gift"></i>
+                    <span>Completely Free</span>
+                </div>
             </div>
-            <button class="remove-file" id="removeFile">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-        </div>
+            <p class="copyright">&copy; 2024 PDF to PPT Converter. All rights reserved.</p>
+        </footer>
+    </div>
 
-        <div class="conversion-options" id="conversionOptions" style="display: none;">
-          <h3>Conversion Settings</h3>
-          <div class="options-grid">
-            <div class="option-group">
-              <label for="slideLayout">Slide Layout</label>
-              <select id="slideLayout">
-                <option value="standard">Standard (4:3)</option>
-                <option value="widescreen" selected>Widescreen (16:9)</option>
-              </select>
-            </div>
-            <div class="option-group">
-              <label for="imageQuality">Image Quality</label>
-              <select id="imageQuality">
-                <option value="high" selected>High Quality</option>
-                <option value="medium">Medium Quality</option>
-                <option value="low">Low Quality</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="convert-section" id="convertSection" style="display: none;">
-          <button class="convert-btn" id="convertBtn">
-            <i class="fas fa-magic"></i>
-            Convert to PPT
-          </button>
-        </div>
-
-        <div class="progress-section" id="progressSection" style="display: none;">
-          <div class="progress-info">
-            <h3>Converting your PDF...</h3>
-            <p id="progressText">Initializing conversion...</p>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" id="progressFill"></div>
-          </div>
-          <div class="progress-percentage" id="progressPercentage">0%</div>
-        </div>
-
-        <div class="success-section" id="successSection" style="display: none;">
-          <div class="success-icon">
-            <i class="fas fa-check-circle"></i>
-          </div>
-          <h3>Conversion Complete!</h3>
-          <p>Your PowerPoint presentation is ready for download</p>
-          <div class="download-actions">
-            <button class="download-btn" id="downloadBtn">
-              <i class="fas fa-download"></i>
-              Download PPT
-            </button>
-            <button class="convert-another-btn" id="convertAnotherBtn">
-              <i class="fas fa-plus"></i>
-              Convert Another File
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="features">
-        <div class="feature">
-          <i class="fas fa-shield-alt"></i>
-          <span>100% Secure</span>
-        </div>
-        <div class="feature">
-          <i class="fas fa-bolt"></i>
-          <span>Fast Conversion</span>
-        </div>
-        <div class="feature">
-          <i class="fas fa-mobile-alt"></i>
-          <span>Works on All Devices</span>
-        </div>
-        <div class="feature">
-          <i class="fas fa-gift"></i>
-          <span>Completely Free</span>
-        </div>
-      </div>
-      <p class="copyright">&copy; 2024 PDF to PPT Converter. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <!-- PDF.js if needed -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script
-  
-<!-- Your main script -->
-<script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
